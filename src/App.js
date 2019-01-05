@@ -19,6 +19,7 @@ class App extends Component {
           >
             hey i work now
           </a>
+          <h1>Hey this is a new feature</h1>
         </header>
       </div>
     );
