@@ -13,4 +13,5 @@ RUN npm run build
 
 # Second phase: Serve built html files via Nginx
 FROM nginx:1.15.8-alpine
+EXPOSE 80
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
