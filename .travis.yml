@@ -1,0 +1,17 @@
+# Steps:
+# 1. Need copy of docker running
+# 2. Build image using Dockerfile.dev in order to be able to run test suite
+# 3. Run the test suite
+# 4. Deploy code to AWS
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t kyleamazza/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run kyleamazza/docker-react npm run test -- --coverage
+
